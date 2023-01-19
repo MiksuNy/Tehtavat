@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Palkkalaskuri</h1>
+        <form name="palkkalaskuri">
+            Bruttopalkka: <input type="number" name="bruttoPalkka">
+            <br>
+            Veroprosentti: <input type="number" name="vero">
+            <br>
+            <input type="button" value="Laske palkka" onclick="laskePalkka()">
+
+            <p>Työttömyysvakuutus: 1.90%</p>
+            <p>Työeläkevakuutusmaksu: 6.35%</p>
+            <br>
+            Lopullinen palkka: <input type="text" name="palkka" value="">
+        </form>
+        <script>
+            function laskePalkka(){
+                let brPalkka = Number(document.palkkalaskuri.bruttoPalkka.value);
+                let vProsentti = Number(document.palkkalaskuri.vero.value);
+                let Vero = brPalkka * vProsentti / 100;
+
+                let tV = brPalkka * 0.019;
+                let tM = brPalkka * 0.0635;
+
+                let nettoPalkka = brPalkka - Vero - tV - tM;
+                document.palkkalaskuri.palkka.value = nettoPalkka;
+            }
+        </script>
+    </body>
+</html>

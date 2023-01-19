@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2>Koko vuoden sademäärä Helsingissä.</h2>
+        <h3 id="sade"></h3>
+
+        <script>
+            const sadeMaarat = [47.0, 36.6, 34.7, 37.0, 41.9, 47.5, 61.7, 74.8, 65.4, 69.7, 66.1, 54.6]
+            let summa = 0;
+            for (let i = 0; i < sadeMaarat.length; i++) {
+                summa += sadeMaarat[i];
+                
+            }
+            document.getElementById("sade").innerHTML = summa.toPrecision(4);
+        </script>
+    </body>
+</html>
